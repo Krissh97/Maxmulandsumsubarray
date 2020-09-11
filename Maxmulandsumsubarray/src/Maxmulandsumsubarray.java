@@ -1,10 +1,27 @@
 public class Maxmulandsumsubarray {
     public static void main(String args[]){
-        int[] arr = {-5,10,20,-8, 8, -4, 10};
+        int[] arr = {-1,2,3,-4,5,10};
+
         System.out.println("Maximum subarray sum is:"+maxsum(arr));
         System.out.println("Maximum subarray multiplication is:"+maxmul(arr));
+        System.out.println("Maximum subsequence sum is:"+maxsumsubseq(arr));
+
 
     }
+    public static int maxsumsubseq(int[] nums){
+        int max = Integer.MIN_VALUE;
+        int sum = 0;
+        for(int i=0;i<nums.length;i++){
+            if(nums[i]<=0)
+                continue;
+            sum += nums[i];
+            //max = Math.max(max, sum);
+//            if(sum<max)
+//                sum -= nums[i];
+        }
+        return sum;
+    }
+
     public static int maxsum(int[] nums){
         int max = Integer.MIN_VALUE;
         int sum = 0;
